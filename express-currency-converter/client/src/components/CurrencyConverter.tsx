@@ -65,7 +65,7 @@ const CurrencyConverter: React.FC = () => {
     const currencyTo = currency.find((item: any) => item.cc === to);
     console.log('currencyFrom', currencyFrom, 'currencyTo', currencyTo);
     if (currencyFrom && currencyTo) {
-      const value = (currencyTo.rate / currencyFrom.rate) * amount;
+      const value = (currencyFrom.rate / currencyTo.rate) * amount;
       if (value && typeof value === 'number') {
         setValue(value);
         setIsError(false);
